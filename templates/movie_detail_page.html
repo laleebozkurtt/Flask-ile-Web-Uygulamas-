@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+{% block title%} {{movie['name']}} Page {% endblock title %}
+
+{% block content%}
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Img</th>
+      <th scope="col">Name</th>
+      <th scope="col">Likes</th>
+      <th scope="col">Dislikes</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for actor in actors %}
+    <tr>
+      <td>
+        <img src = "static/images/actor/{{actor['actor.image']}}">
+      </td>
+      <td>{{actor['actor.name'] }}</td>
+      <td>{{actor['actor.likes'] }}</td>
+      <td>{{actor['actor.dislikes'] }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock content%}
